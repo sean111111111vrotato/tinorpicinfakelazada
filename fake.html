@@ -2,26 +2,28 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Tinorpicin</title>
+  <title>Fake Product</title>
   <style>
-    /* Reset default margin */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
     }
 
-    /* Background image fills the entire screen */
     body {
-      background: url('fake.jpeg') no-repeat center center;
-      background-size: cover; /* makes it fill the screen */
+      /* Make background image stay centered and fill the screen */
+      background-image: url('fake.jpeg');
+      background-repeat: no-repeat;
+      background-position: center center; /* center horizontally & vertically */
+      background-attachment: fixed;
+      background-size: cover; /* scale to cover full screen */
+
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
     }
 
-    /* Style the buttons */
     button {
       padding: 15px 30px;
       border: none;
@@ -51,7 +53,6 @@
 </head>
 <body>
 
-  <!-- The buttons appear on top of the image -->
   <button id="buyNow">BUY NOW</button>
   <button id="addToCart">ADD TO CART</button>
 
@@ -65,7 +66,7 @@
 
     buyNowBtn.addEventListener("click", () => {
       alert("Buy now and add to cart!");
-      addToCartBtn.click(); // simulate Add to Cart click
+      addToCartBtn.click();
     });
   </script>
 
