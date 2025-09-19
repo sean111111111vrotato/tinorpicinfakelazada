@@ -1,12 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just an Image</title>
+  <title>Tinorpicin</title>
+  <style>
+    /* Reset default margin */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    /* Background image fills the entire screen */
+    body {
+      background: url('fake.jpeg') no-repeat center center;
+      background-size: cover; /* makes it fill the screen */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Style the buttons */
+    button {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      opacity: 0.9;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    #buyNow {
+      background-color: #e53935;
+      color: white;
+    }
+
+    #addToCart {
+      background-color: #43a047;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <img src="fake.jfif" alt="My Image" width="100%">
+
+  <!-- The buttons appear on top of the image -->
+  <button id="buyNow">BUY NOW</button>
+  <button id="addToCart">ADD TO CART</button>
+
+  <script>
+    const addToCartBtn = document.getElementById("addToCart");
+    const buyNowBtn = document.getElementById("buyNow");
+
+    addToCartBtn.addEventListener("click", () => {
+      alert("Item added to cart!");
+    });
+
+    buyNowBtn.addEventListener("click", () => {
+      alert("Buy now and add to cart!");
+      addToCartBtn.click(); // simulate Add to Cart click
+    });
+  </script>
+
 </body>
 </html>
-
